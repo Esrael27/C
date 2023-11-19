@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
     },
     date: {
      marginTop: 1,
-     marginBottom: 45,
+     marginBottom: 30,
       fontSize: 14,
       color: '#FFFFFF',
     },

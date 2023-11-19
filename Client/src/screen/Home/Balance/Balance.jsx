@@ -27,7 +27,7 @@ const Balance = () => {
     <ImageBackground
       source={require('../../../asset/bg.png')}
       style={styles.backgroundImage}
-      imageStyle={{ borderRadius: 21 }} // Set borderRadius here
+      imageStyle={{ borderRadius: 11 }} // Set borderRadius here
     >
       <View style={styles.container}>
         <View style={styles.containe}>
@@ -49,7 +49,7 @@ const Balance = () => {
           </TouchableOpacity>
         </View>
         <Text style={styles.balance}>
-          {displayText ? '323,434,43.43' :'* * * * * *'} Birr
+          {displayText ? '323,434,43.43' :'* * * * * *'}  Birr
         </Text>
         <Text style={styles.account}>
           {`Saving - ${displayText ? ' 10001967302085' : ' 1*********0285'}`}
