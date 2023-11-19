@@ -3,3 +3,7 @@
 # dependencies
 node_modules/
 .env
+
+import HomeScreen from './Home/Home';
+import DetailsScreen from './Accounts/Accounts';
+import SettingsScreen from './Recents/Recents';
