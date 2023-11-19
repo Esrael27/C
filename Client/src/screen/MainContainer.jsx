@@ -8,7 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './Home/Home'; // Replace with your actual HomeScreen component
 import DetailsScreen from './Accounts/Accounts'; // Replace with your actual DetailsScreen component
 import SettingsScreen from './Recents/Recents'; // Replace with your actual SettingsScreen component
-import NavBar from './Header/Header';
+import Header from '../components/Header/Header';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +20,7 @@ function MainContainer() {
   
   return (
     <>
-      <NavBar />
+      <Header />
       <Tab.Navigator
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
