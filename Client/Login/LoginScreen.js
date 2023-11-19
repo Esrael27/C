@@ -1,8 +1,9 @@
+// LoginScreen.js
 import React, { useState, memo } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Import the appropriate icon
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { loginUser, handleLoginError } from './api/api';
 import styles from './styles/Login.style';
 
@@ -33,9 +34,9 @@ const LoginScreen = () => {
   };
 
   return (
-    <>
-      <View style={styles.a}>
-        <TouchableOpacity>
+    <View style={styles.container}>
+      <View style={styles.languageContainer}>
+       <TouchableOpacity>
           <Text style={styles.text}>{getTranslatedText('reset', 'የኋለ ነገር')}</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={changeLanguage}>
@@ -43,20 +44,20 @@ const LoginScreen = () => {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.container}>
-      <Image source={require('../asset/cbe.jpg')} style={styles.logo} />
+      <View style={styles.loginContainer}>
+        <Image source={require('../asset/cbe.jpg')} style={styles.logo} />
         <Text style={styles.welcome}>{getTranslatedText('Welcome!', 'እንኳን ደህና መጡ')}</Text>
         <Text style={styles.commercial}>{getTranslatedText('Commercial Bank of Ethiopia', 'የኢትዮጵያ ንግድ ባንክ')}</Text>
         <Text style={styles.good}>Good morning</Text>
         
         <TextInput
-  style={styles.input}
-  placeholder={getTranslatedText('PIN', 'PIN')}
-  secureTextEntry={true}
-  value={password}
-  onChangeText={(text) => setPassword(text)}
-  keyboardType="numeric" // Setting the keyboardType to 'numeric'
-/>
+          style={styles.input}
+          placeholder={getTranslatedText('PIN', 'PIN')}
+          secureTextEntry={true}
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          keyboardType="numeric"
+        />
 
         <TouchableOpacity style={styles.iconContainer} onPress={handleLogin}>
           <Icon name="chevron-right" size={14} color="#fff2ef" />
@@ -65,14 +66,18 @@ const LoginScreen = () => {
 
       <View style={styles.footer}>
         <TouchableOpacity style={styles.fot}>
+        <Icon name="shield"  size={27}  />
           <Text style={styles.non}>
-            <Icon name="shield" /> Non-Financial Services
+             Non-Financial Services
           </Text>
         </TouchableOpacity>
         <Text style={styles.fo}>Copyright © Commercial Bank Of Ethiopia</Text>
       </View>
-    </>
+    </View>
   );
 };
 
 export default memo(LoginScreen);
+
+
+
